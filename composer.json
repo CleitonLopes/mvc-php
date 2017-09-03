@@ -1,0 +1,26 @@
+{
+    "name": "MVC",
+    "description": "Curso php MVC",
+    "authors": [
+        {
+            "name": "cleiton",
+            "email": "cleiton.alc@gmail.com"
+        }
+    ],
+    "require": {
+
+        "php": ">=5.6"
+
+    },
+
+    "autoload": {
+
+        "psr-4": {
+
+            "SON\\" : "vendor/SON",
+            "App\\" : "App/"
+
+        }
+
+    }
+}

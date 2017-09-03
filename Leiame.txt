@@ -1,0 +1,81 @@
+MVC - Mini Framework
+***
+
+Model - View - Controller
+
+Composer
+********
+
+- composer init
+
+- Criado autoload
+            "SON\\" : "vendor/SON",
+            "App\\" : "App/"
+
+- SON - nome do package no caso scholl of net dentro da pasta vendor, pasta que vai carregar as classes do
+  projeto para dentro
+- App - pasta que vai carregar as classes do projeto
+
+- Criado Classe Route.php
+- Criado arquivo htaccess para setar o usário sempre no arquivo index.php dentro de public
+
+Configurado Arquivo de Route.php
+*********************************
+
+- Configurado metodos no arquivo Route.php
+
+Abstraindo class Route
+**********************
+
+- Criando dentro da pasta uma classe abstrata SON/init/Bootstrap.php para inicializar o sistema
+
+- Copiado os metodos da classe Route.php para a classe Bootstrap.php e modificado os metodos.
+
+- Dentro da classe Route.php foi feito a herança da classe bootstrap com extends e excluido metodos que agora
+  está na classe pai Bootstrap.php
+
+Exibindo as views
+*****************
+
+- Criado dir index/index.phtml e contact.phtml, configurado controllers para chamar as views
+
+Criando o metodo Render
+************************
+
+- Substituindo o envio de variaveis com incude_once
+
+- Criado o metodo render para fazer o include automatico
+
+Abstraindo a classe Controller
+******************************
+
+- Criado uma classe abstrata dentro de SON\Controller para abstrair mais a classe IndexController fincando apenas
+  os metodos a serem implementados pelo usuario
+
+Layout
+*******
+
+- Criado arquivo layout.phtml dentro de Views
+
+- Configurado classe Action para pegar o layout ou não dependendo do parametro, true ou false, por padrão vem true
+
+Conexao com banco de dados
+***************************
+
+- Criado o arquivo de Conn dentro da raiz app e criado uma class Client dentro de models
+
+Container DI
+***************
+
+- Criado container de serviço de conexão, recebendo o model e injetando a conexao com o banco
+
+Abstraindo Model
+****************
+
+- Criando classe abstrata dentro de SON\Model e herdando com a classe Client, assim usando a classe para varios
+  models sem precisar reescrever o código recursivamente, criando assim metodos genéricos utilizados por varios
+  models que vão herda-la
+
+- Caso precise de métodos especificos para aquele determinado model, cria-lo diretamente no model.
+
+
